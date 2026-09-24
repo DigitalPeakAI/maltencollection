@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Thomas Malten Collection – Indian Oleographs</title>
+<meta name="description" content="The Thomas Malten Collection: over 500 Indian oleographs and chromolithographs, around 1900 to 1960. Ravi Varma Press prints, Calcutta art studio lithographs, South Indian devotional prints, advertising calendars and nationalist portraits.">
+<link rel="canonical" href="https://maltencollection.com/">
+<meta property="og:title" content="The Thomas Malten Collection – Indian Oleographs">
+<meta property="og:description" content="Over 500 Indian oleographs and chromolithographs, including Ravi Varma Press and Calcutta prints, around 1900 to 1960.">
+<meta property="og:url" content="https://maltencollection.com/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E4ECEA; --surface:#F7FAF9; --plate:#D3E2E2; --ink:#1C2A29; --muted:#566664;
+  --line:#BCCBC9; --accent:#A3302A; --accent-ink:#FFFFFF; --gold:#8A6A22;
+  --display:"Rozha One", "Georgia", "Times New Roman", serif;
+  --body:"Spectral", "Georgia", "Times New Roman", serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121A19; --surface:#1B2524; --plate:#243130; --ink:#E4ECEA; --muted:#9DB0AD;
+    --line:#34443F; --accent:#E06A5F; --accent-ink:#1B0E0C; --gold:#D2B064; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121A19; --surface:#1B2524; --plate:#243130; --ink:#E4ECEA; --muted:#9DB0AD;
+  --line:#34443F; --accent:#E06A5F; --accent-ink:#1B0E0C; --gold:#D2B064; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
+
+header{padding:clamp(2.5rem,7vw,5rem) 0 2rem}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,10vw,6.5rem);line-height:.95;margin:0;letter-spacing:-.01em}
+h1 span{display:block;font-size:.32em;line-height:1.2;margin-top:.6em;color:var(--muted);letter-spacing:0}
+.intro{max-width:36em;margin:1.6rem 0 0;font-size:1.125rem;line-height:1.7}
+.intro strong{font-weight:600}
+
+.controls{position:sticky;top:0;z-index:5;background:var(--bg);padding:1rem 0;border-bottom:1px solid var(--line);
+  padding-top:calc(1rem + env(safe-area-inset-top,0px));margin-top:calc(-1 * env(safe-area-inset-top,0px))}
+.controls .wrap{display:flex;flex-wrap:wrap;gap:.75rem 1rem;align-items:center;justify-content:space-between}
+.filters{display:flex;flex-wrap:wrap;gap:.4rem}
+.filters button{font:inherit;font-size:.95rem;border:1px solid var(--line);background:transparent;color:var(--ink);
+  padding:.35rem .85rem;border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.filters button .n{opacity:.7;margin-left:.3em}
+.search{font:inherit;font-size:.95rem;padding:.45rem .85rem;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);width:min(100%,16rem)}
+button:focus-visible,.search:focus-visible,.card:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+main{padding:2rem 0 4rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:2.25rem 1.5rem}
+.card{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:.6rem}
+.card .plate{background:var(--plate);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:2px}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.card:hover img{transform:scale(1.03)}
+.card .no{font-size:.85rem;color:var(--muted)}
+.card h2{font-family:var(--body);font-weight:600;font-size:1.05rem;line-height:1.3;margin:0}
+.card .press{font-size:.9rem;color:var(--muted);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.empty{color:var(--muted);font-style:italic}
+
+dialog{border:0;padding:0;max-width:min(1100px,96vw);width:100%;max-height:94vh;background:var(--surface);color:var(--ink);border-radius:4px}
+dialog::backdrop{background:rgba(10,16,15,.72)}
+.detail{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);max-height:94vh}
+.detail .pic{background:var(--plate);display:flex;align-items:center;justify-content:center;padding:1rem;overflow:auto}
+.detail .pic img{max-height:88vh;width:auto;object-fit:contain}
+.detail .info{padding:2rem 2rem 1.5rem;overflow:auto;display:flex;flex-direction:column}
+.detail .no{color:var(--muted);font-size:.95rem}
+.detail h2{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.05;margin:.2rem 0 1.2rem}
+dl{margin:0;display:grid;gap:.9rem}
+dt{font-size:.85rem;color:var(--gold);font-weight:600}
+dd{margin:0}
+.nav{margin-top:auto;padding-top:1.5rem;display:flex;gap:.5rem;justify-content:space-between}
+.nav button{font:inherit;font-size:.95rem;border:1px solid var(--line);background:transparent;color:var(--ink);padding:.45rem .9rem;border-radius:6px;cursor:pointer}
+.nav .close{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+
+footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.9rem}
+
+@media (max-width:760px){
+  .detail{grid-template-columns:1fr;overflow:auto}
+  .detail .pic img{max-height:60vh}
+  .detail .info{padding:1.5rem 1.25rem}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1.75rem 1rem}
+}
+@media (prefers-reduced-motion:reduce){.card img{transition:none}.card:hover img{transform:none}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <h1>The Thomas Malten Collection<span>Indian oleographs and chromolithographs, around 1900 to 1960</span></h1>
+  <p class="intro">My father, Thomas Malten, collected these prints over many years. Today they are kept in Cologne, in Tübingen and in Tamil Nadu. This page catalogues them step by step: <strong>__COUNT__ prints</strong> photographed and described so far.</p>
+</header>
+
+<div class="controls">
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filter by press"></div>
+    <input class="search" type="search" placeholder="Search, e.g. Saraswati" aria-label="Search the collection">
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>No print matches this search. Try another term or set the filter to “All”.</p>
+</main>
+
+<footer class="wrap">Last updated September 2026. Missing numbers in the sequence have no photo yet. Numbers match the photo file names.</footer>
+
+<dialog id="dlg" aria-labelledby="d-title">
+  <div class="detail">
+    <div class="pic"><img id="d-img" alt=""></div>
+    <div class="info">
+      <div class="no" id="d-no"></div>
+      <h2 id="d-title"></h2>
+      <dl id="d-dl"></dl>
+      <div class="nav">
+        <div style="display:flex;gap:.5rem">
+          <button type="button" id="d-prev">Previous</button>
+          <button type="button" id="d-next">Next</button>
+        </div>
+        <button type="button" class="close" id="d-close">Close</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+const DATA = __DATA__;
+const GROUPS = [["all","All"],["rvp","Ravi Varma Press"],["ghat","Ghatkopar presses"],["brij","S. S. Brijbasi"],["south","South India"],["bengal","Bengal"],["ads","Advertising"],["portraits","Portraits & politics"],["other","Press to be identified"]];
+let group = "all", query = "", visible = [], current = -1;
+
+const filters = document.querySelector(".filters");
+GROUPS.forEach(([k, label]) => {
+  const n = k === "all" ? DATA.length : DATA.filter(d => d.group === k || (d.tags||[]).includes(k)).length;
+  const b = document.createElement("button");
+  b.type = "button"; b.dataset.g = k; b.setAttribute("aria-pressed", k === group);
+  b.innerHTML = `${label}<span class="n">${n}</span>`;
+  b.onclick = () => { group = k; filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x.dataset.g === k)); render(); };
+  filters.appendChild(b);
+});
+document.querySelector(".search").addEventListener("input", e => { query = e.target.value.trim().toLowerCase(); render(); });
+
+function render(){
+  visible = DATA.filter(d => (group === "all" || d.group === group || (d.tags||[]).includes(group)) &&
+    (!query || [d.id,d.title,d.motif,d.press,d.date,d.note].join(" ").toLowerCase().includes(query)));
+  const grid = document.getElementById("grid");
+  grid.innerHTML = "";
+  visible.forEach((d, i) => {
+    const b = document.createElement("button");
+    b.className = "card"; b.type = "button";
+    b.innerHTML = `<div class="plate"><img loading="lazy" src="${d.thumb||d.img}" alt="${d.title}"></div>
+      <div class="no">No. ${d.id}</div><h2>${d.title}</h2><div class="press">${d.press||"Details to follow"}</div>`;
+    b.onclick = () => open(i);
+    grid.appendChild(b);
+  });
+  document.getElementById("empty").hidden = visible.length > 0;
+}
+
+const dlg = document.getElementById("dlg");
+function open(i){
+  current = i; const d = visible[i];
+  document.getElementById("d-img").src = d.img;
+  document.getElementById("d-img").alt = d.title;
+  document.getElementById("d-no").textContent = "No. " + d.id;
+  document.getElementById("d-title").textContent = d.title;
+  const rows = [["Subject",d.motif],["Press and publisher",d.press],["Date",d.date],["Size",d.format],["Condition",d.cond],["Note",d.note]];
+  document.getElementById("d-dl").innerHTML = rows.filter(r => r[1]).map(r => `<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join("");
+  document.getElementById("d-prev").disabled = i === 0;
+  document.getElementById("d-next").disabled = i === visible.length - 1;
+  if (!dlg.open) dlg.showModal();
+}
+document.getElementById("d-prev").onclick = () => current > 0 && open(current - 1);
+document.getElementById("d-next").onclick = () => current < visible.length - 1 && open(current + 1);
+document.getElementById("d-close").onclick = () => dlg.close();
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+document.addEventListener("keydown", e => {
+  if (!dlg.open) return;
+  if (e.key === "ArrowLeft") document.getElementById("d-prev").click();
+  if (e.key === "ArrowRight") document.getElementById("d-next").click();
+});
+render();
+</script>
+</body>
+</html>
